@@ -1,6 +1,6 @@
 # mathGenius
 
-A fun little computer game to help youngsters practice their math and arithmetic skills in an exciting and interesting way. Made for my little sister to help her out through elementary school and hopefully for many more years to come as well!
+A fun little computer game to help youngsters practice their math skills in an exciting and interesting way. Made for my little sister to help her out through elementary school and hopefully for many more years to come as well!
 
 So far, the game has four difficulty options: 
 
