@@ -9,6 +9,6 @@ So far, the game has four difficulty options:
  - Hard (Numbers from 5 up to 25)
  - Genius (Numbers from 10 up to 100). 
 
-At the moment, mathGenius only asks addition based questions but I am hoping to add subtraction, multiplication, and division in the near future.
+In addition, mathGenius is able to ask addition/subtraction/multiplication/division based questions with a mixed goodie-bag quiz mode coming in the near future.
 
 Give it a shot, even if you are already a math-Genius! ;)
