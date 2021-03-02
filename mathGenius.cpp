@@ -170,9 +170,12 @@ void askQuestion(int &questionNumber, int &answer, int &response, int &responseT
 
 
 //	Feedback on the Answer (Accuracy and Speed)
-void answerFeedback(int response, int answer, int responseTime, int responseCap, int questionNumber, int &correctNumber) {
+void answerFeedback(int response, int answer, int responseTime, int responseCap, int questionNumber, int &correctNumber, int &lastQuestionResult) {
+	lastQuestionResult = 0;
+
 	if (response == answer && responseTime <= responseCap) {
 		correctNumber++;
+		lastQuestionResult = 1;
 		std::cout << "Good job, you got this answer right!";
 	}
 
@@ -202,7 +205,7 @@ void answerFeedback(int response, int answer, int responseTime, int responseCap,
 
 int main() {
 
-	int number1{0}, number2{0}, answer{0}, response{0}, questionNumber{0}, correctNumber{0}, difficultyCap{1}, difficultySpread{5}, difficultyIndex{0}, gameActive{1}, responseCap{3}, responseTime{0}, gameMode{0};
+	int number1{0}, number2{0}, answer{0}, response{0}, questionNumber{0}, correctNumber{0}, difficultyCap{1}, difficultySpread{5}, difficultyIndex{0}, gameActive{1}, responseCap{3}, responseTime{0}, gameMode{0}, lastQuestionResult{0};
 	std::string difficultyResponse{""}, continueResponse{""};
 
 	std::cout << "HELLO AND WELCOME TO MATH GENIUS!" << std::endl;
@@ -221,14 +224,14 @@ int main() {
 
 		askQuestion(questionNumber, answer, response, responseTime, difficultySpread, difficultyCap, gameMode);
 
-		answerFeedback(response, answer, responseTime, responseCap, questionNumber, correctNumber);
+		answerFeedback(response, answer, responseTime, responseCap, questionNumber, correctNumber, lastQuestionResult);
 
 
 //		std::cout << "TOOK YA A GOOD " << difftime(stop,start) << " SECONDS BUD" << std::endl; FEEDBACK CODE
 
 
 	//	Difficulty Index Update
-		if (correctNumber % 25 == 0 && correctNumber != 0) {
+		if (correctNumber % 25 == 0 && correctNumber != 0 && lastQuestionResult == 1) {
 			std::cout <<"So far so good, you've answered " << correctNumber << " questions correct. Moving onto the next difficulty, good luck!" << std::endl;
 			difficultyIndex++;
 		}
